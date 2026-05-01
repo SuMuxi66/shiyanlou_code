@@ -19,6 +19,9 @@ def main():
         "2": ("石头剪刀布", "石头剪刀布.py"),
         "3": ("跳7游戏", "jump7.py"),
         "4": ("两数之和算法", "两数之和.py"),
+        "5": ("贪吃蛇游戏", "贪吃蛇.py"),
+        "6": ("简易计算器", "计算器.py"),
+        "7": ("简易记事本", "记事本.py"),
     }
     
     while True:
@@ -38,12 +41,21 @@ def main():
             print("-" * 30)
             
             try:
-                if choice in ["1", "2"]:
+                if choice == "1":
                     module = import_game_module(game_file)
-                    if choice == "1":
-                        module.guess_number()
-                    else:
-                        module.rock_paper_scissors()
+                    module.guess_number()
+                elif choice == "2":
+                    module = import_game_module(game_file)
+                    module.rock_paper_scissors()
+                elif choice == "5":
+                    module = import_game_module(game_file)
+                    module.snake_game()
+                elif choice == "6":
+                    module = import_game_module(game_file)
+                    module.calculator()
+                elif choice == "7":
+                    module = import_game_module(game_file)
+                    module.notepad()
                 else:
                     with open(game_file, 'r', encoding='utf-8') as f:
                         code = f.read()
